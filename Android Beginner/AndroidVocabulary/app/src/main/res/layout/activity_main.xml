@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    /*MAIN*/
+    <LinearLayout
+        android:id="@+id/main_activity_card_face"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:onClick="onCardClick"
+        android:padding="15dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    /*GIST*/
+    <LinearLayout
+        android:id="@+id/gistL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/gist" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*LINEAR LAYOUT*/
+    <LinearLayout
+        android:id="@+id/linearL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/LinearLayout" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*ON CLICK LISTENER*/
+    <LinearLayout
+        android:id="@+id/onclickL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/OnClickListener" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*RECYCLE VIEW*/
+    <LinearLayout
+        android:id="@+id/recycleviewL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/RecyclerView" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*RElATIVE LAYOUT*/
+    <LinearLayout
+        android:id="@+id/relativeL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/RelativeLayout" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*VIEW*/
+    <LinearLayout
+        android:id="@+id/viewL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/view" />
+            />
+        </ScrollView>
+    </LinearLayout>
+
+    /*VIEW GROUP*/
+    <LinearLayout
+        android:id="@+id/viewgroupL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc"
+        android:clickable="true"
+        android:onClick="onCardClick"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/viewgroup" />
+            />
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Android Vocabulary</string>
+    <string name="view">A View is a rectangular area visible on the screen. It has a width and height, and sometimes a background color.
+
+\n\nThe illustration shows Views of three different types. An ImageView displays an image such as an icon or photo. A TextView displays text. A Button is a TextView that is sensitive to touch: tap it with your finger and it will respond. And a ViewGroup is a big View—often invisible—that contains and positions the smaller Views inside of it.
+
+\n\nA View on the screen is drawn by a Java object inside the Android device. In fact, the Java object is the real View. But when talking about what the user sees, it’s convenient to refer to the rectangular area on the screen as the “View”.</string>
+    <string name="viewgroup">
+        A View is a rectangular area on the screen. For example, a TextView displays text and an ImageView displays an image.
+
+\n\nA ViewGroup is a big View that can contain smaller Views inside of it. The smaller Views are called the children of the ViewGroup and might be TextViews or ImageViews. The ViewGroup is called the parent of its children. The illustration shows one of the most common ViewGroups, a vertical LinearLayout.
+
+\n\nThe ViewGroup itself might be transparent, serving only to contain and position its children. Its children, however, will almost always be visible.</string>
+    <string name="OnClickListener">A computer is a machine that follows a list of instructions called a program. An Android device is a computer and an app is a program.
+
+\n\nInside the device are containers called variables that hold values such as numbers or pieces of text. The value in a variable can easily be changed; that’s why it’s called a “variable”.
+
+\n\nA big variable that can contain smaller variables is called an object. The smaller variables are called the fields or members of the object and are often objects in their own right. That means we can store a little object inside a bigger one. An object can also have lists of instructions attached to it—in effect, little programs—called methods. The methods of an object cannot be changed. They are permanently attached to the object.
+
+\n\nThere are many classes of objects. For example, an object of class ImageView displays an image, and an object of class Button can respond when touched. All of the objects of a given class have exactly the same set of methods attached to them. For example, every object of class Button has a method named setEnabled(boolean), which makes the Button eligible or ineligible for touching.
+
+\n\nBut we often need two or more Buttons that take different actions, such as “purchase” vs. “cancel”. We cannot accomplish this by attaching a different method to each Button. All the Buttons belong to the same class and therefore must have identical methods. Similarly, a Button that changes from “play” to “pause” would have to do this without changing its methods.
+
+\n\nThe solution is to create a separate object called an OnClickListener. Attached to the listener is a method named onClick(View), containing the instructions to be executed when a Button is touched. (“Click” was the word for “touch” in early versions of Android.) The listener is stored in a field of the Button and lies dormant there until the touch occurs. When that happens, the onClick method attached to the listener is automatically executed.
+
+\n\nIt would be hard to make many classes of Buttons, each with a different set of methods. But an OnClickListener is a much simpler type of object. It is practical to create a listener with an onClick method containing instructions to “purchase”, and another listener whose onClick performs a “cancel”. Each listener can then be stored into a different Button, yielding different behavior when each Button is touched. And since the contents of a field can be changed, the “play” listener in a Button could be replaced with a “pause” listener.
+
+\n\nAs a footnote, there’s a different way of setting up a method to be executed when a Button is touched. If the Button is created with a &lt;Button&gt; element in an XML layout file, the method can be designated with the android:onClick attribute of the element. This is a convenient alternative for a Button whose behavior does not change.</string>
+    <string name="RelativeLayout">A View is a rectangular area on the screen. For example, a TextView displays text and an ImageView displays an image.
+
+\n\nA ViewGroup is a big View that can contain smaller Views inside of it. The smaller Views are called the children of the ViewGroup and might be TextViews or ImageViews. The ViewGroup is called the parent of its children.
+
+\n\nA RelativeLayout is a common type of ViewGroup that lets us position its children relative to its own edges. For example, the three children in the illustration are placed in the corners of a RelativeLayout. A RelativeLayout also lets us arrange its children relative to each other: one child can be placed to the right of another, and can even overlap.</string>
+    <string name="LinearLayout">A View is a rectangular area on the screen. For example, a TextView displays text and an ImageView displays an image.
+
+\n\nA ViewGroup is a big View that can contain smaller Views inside of it. The smaller Views are called the children of the ViewGroup and might be TextViews or ImageViews. The ViewGroup is called the parent of its children.
+
+\n\nA LinearLayout is a common type of ViewGroup. It arranges its children in a vertical column or a horizontal row.</string>
+    <string name="gist">A computer is a machine that follows a list of instructions called a program. An Android device is a computer and an app is a program.
+
+\n\nA snippet is a short, self-contained excerpt from an app, demonstrating how to instruct the device to do something. We can re-use the snippet by pasting it into one of our own apps, possibly with some minimal changes.
+
+\n\nOne way to share a snippet is to post it on the GitHub website https://gist.github.com/. A snippet shared there is called a gist. You can then share a link to the gist with your friends.</string>
+    <string name="RecyclerView">The RecyclerView widget is a more advanced and flexible version of ListView. This widget is a container for displaying large data sets that can be scrolled very efficiently by maintaining a limited number of views. Use the RecyclerView widget when you have data collections whose elements change at runtime based on user action or network events.
+
+\n\nThe RecyclerView class simplifies the display and handling of large data sets by providing:
+\n\nLayout managers for positioning items
+\n\nDefault animations for common item operations, such as removal or addition of items
+\n\nYou also have the flexibility to define custom layout managers and animations for RecyclerView widgets.</string>
+</resources>
