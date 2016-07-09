@@ -1,36 +1,34 @@
-# README #
+# Table of contents
+1. [Introduction](#introduction)
+2. [Some paragraph](#paragraph1)
+    1. [Sub paragraph](#subparagraph1)
+3. [Another paragraph](#paragraph2)
+# Table of contents
+1. [Introduction](#introduction2)
+2. [Some paragraph](#paragraph12)
+    1. [Sub paragraph](#subparagraph12)
+3. [Another paragraph](#paragraph22)
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## This is the introduction <a name="introduction"></a>
+Some introduction text, formatted in heading 2 style
 
-### What is this repository for? ###
+## Some paragraph <a name="paragraph1"></a>
+The first paragraph text
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Sub paragraph <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
 
-### How do I get set up? ###
+## Another paragraph <a name="paragraph2"></a>
+The second paragraph text
 
-* Summary of set up
-* Configuration
-* Dependencies# My Table of content
-- [Section 1](#id-section1)
-- [Section 2](#id-section2)
+## This is the introduction <a name="introduction2"></a>
+Some introduction text, formatted in heading 2 style
 
-<div id='id-section1'/>
-## Section 1
-<div id='id-section2'/>
-## Section 2
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Some paragraph <a name="paragraph12"></a>
+The first paragraph text
 
-### Contribution guidelines ###
+### Sub paragraph <a name="subparagraph12"></a>
+This is a sub paragraph, formatted in heading 3 style
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+## Another paragraph <a name="paragraph22"></a>
+The second paragraph text
