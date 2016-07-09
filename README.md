@@ -12,7 +12,14 @@ This README would normally document whatever steps are necessary to get your app
 
 * Summary of set up
 * Configuration
-* Dependencies
+* Dependencies# My Table of content
+- [Section 1](#id-section1)
+- [Section 2](#id-section2)
+
+<div id='id-section1'/>
+## Section 1
+<div id='id-section2'/>
+## Section 2
 * Database configuration
 * How to run tests
 * Deployment instructions
