@@ -24,7 +24,8 @@
         android:layout_height="match_parent"
         android:alpha="0"
         android:contentDescription="homer image"
-        android:src="@drawable/homer" />
+        android:src="@drawable/homer"
+        android:onClick="fade"/>
 
 
 </RelativeLayout>

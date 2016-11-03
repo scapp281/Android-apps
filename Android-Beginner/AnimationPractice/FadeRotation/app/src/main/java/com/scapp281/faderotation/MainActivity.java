@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
     int start = 0;
 
     @Override
@@ -18,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
     public void fade(View view) {
         ImageView bart = (ImageView) findViewById(R.id.bart);
         ImageView homer = (ImageView) findViewById(R.id.homer);
+
         if (start == 0) {
-            bart.animate().alpha(0f).rotationY(1800f).setDuration(2000);
+            bart.animate().alpha(0f)
+                    .translationXBy(111f).rotationY(-180f).setDuration(2000);
             homer.animate().alpha(1f).setDuration(2000);
             start = 1;
-        } else{
+        } else {
             homer.animate().alpha(0f).rotation(1800f).setDuration(2000);
             bart.animate().alpha(1f).setDuration(2000);
             start = 0;
