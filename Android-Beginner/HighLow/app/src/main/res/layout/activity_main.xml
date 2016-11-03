@@ -20,26 +20,55 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/numberButton"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/current"
+        android:layout_below="@+id/currentText"
+        android:layout_toEndOf="@+id/highButton"
+        android:layout_marginStart="78dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High"
         android:id="@+id/highButton"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/numberButton" />
+        android:layout_marginStart="77dp"
+        android:layout_alignTop="@+id/lowButton"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Low"
         android:id="@+id/lowButton"
-        android:layout_alignTop="@+id/highButton"
-        android:layout_toEndOf="@+id/numberButton" />
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/current"
+        android:layout_alignStart="@+id/current" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/previous"
+        android:layout_above="@+id/lowButton"
+        android:layout_alignEnd="@+id/highButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Previous"
+        android:id="@+id/previousText"
+        android:layout_above="@+id/previous"
+        android:layout_alignStart="@+id/previous" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Current"
+        android:id="@+id/currentText"
+        android:layout_marginTop="87dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignEnd="@+id/current" />
 
 
 </RelativeLayout>

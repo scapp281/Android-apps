@@ -4,23 +4,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     int currentNumber = 0;
-    int passNumber = 0;
+    int pastNumber = 0;
     Random numberGenerator = new Random();
-    Button numberButton;
-    Button highButton;
-    Button lowButton;
 
-    public void generateNumber(){
-        passNumber = currentNumber;
-        currentNumber = numberGenerator.nextInt(11)+10;
+    public void generateNumber() {
+        Button previous = (Button) findViewById(R.id.previous);
+        Button current = (Button) findViewById(R.id.current);
+        TextView previousText = (TextView) findViewById(R.id.previousText);
 
-        numberButton.setText(Integer.toString(currentNumber));
+        previous.setVisibility(View.VISIBLE);
+        previousText.setVisibility(View.VISIBLE);
+        pastNumber = currentNumber;
+        previous.setText(Integer.toString(pastNumber));
+        currentNumber = numberGenerator.nextInt(11) + 10;
+        current.setText(Integer.toString(currentNumber));
     }
 
 
@@ -29,21 +33,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        numberButton = (Button) findViewById(R.id.numberButton);
-        highButton = (Button) findViewById(R.id.highButton);
-        lowButton = (Button) findViewById(R.id.lowButton);
+        TextView previousText = (TextView) findViewById(R.id.previousText);
+        Button previous = (Button) findViewById(R.id.previous);
+        Button current = (Button) findViewById(R.id.current);
+        Button highButton = (Button) findViewById(R.id.highButton);
+        Button lowButton = (Button) findViewById(R.id.lowButton);
 
-        currentNumber = numberGenerator.nextInt(11)+10;
-        numberButton.setText(Integer.toString(currentNumber));
+        previous.setVisibility(View.GONE);
+        previousText.setVisibility(View.GONE);
+
+        currentNumber = numberGenerator.nextInt(11) + 10;
+        current.setText(Integer.toString(currentNumber));
 
         highButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 generateNumber();
-                if(currentNumber>passNumber){
+                if (currentNumber > pastNumber) {
                     Toast.makeText(getApplicationContext(),
                             "Yes, it is higher", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(),
                             "No, it is lower", Toast.LENGTH_LONG).show();
                 }
@@ -54,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 generateNumber();
-                if(currentNumber<passNumber){
+                if (currentNumber < pastNumber) {
                     Toast.makeText(getApplicationContext(),
                             "Yes, it is lower", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(),
                             "No, it is higher", Toast.LENGTH_LONG).show();
                 }
