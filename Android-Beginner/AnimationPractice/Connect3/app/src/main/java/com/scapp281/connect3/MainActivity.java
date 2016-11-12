@@ -55,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.slide_down);
 
-                Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.slide_up);
-
                 playAgainLayout.setVisibility(View.VISIBLE);
                 playAgainLayout.startAnimation(slide_down);
             } else {
