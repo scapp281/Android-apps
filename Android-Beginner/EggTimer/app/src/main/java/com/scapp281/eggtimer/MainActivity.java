@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     int currentMinPicker;
     int currentTenthPicker;
     int currentOnesPicker;
-    int total;
 
     public void resetTimer() {
         tenthPicker.setValue(3);
@@ -94,18 +93,20 @@ public class MainActivity extends AppCompatActivity {
 
         timerSeekBar.setMax(600);
         timerSeekBar.setProgress(30);
+
         minutePicker.setMinValue(0);
         minutePicker.setMaxValue(10);
         minutePicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);  // disable soft keyboard
+
         tenthPicker.setMinValue(0);
         tenthPicker.setMaxValue(5);
+        tenthPicker.setValue(3);
         tenthPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+
         onesPicker.setMinValue(0);
         onesPicker.setMaxValue(9);
-        onesPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-
-        tenthPicker.setValue(3);
         onesPicker.setValue(0);
+        onesPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -147,7 +148,5 @@ public class MainActivity extends AppCompatActivity {
                 timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
             }
         });
-        timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
-
     }
 }
