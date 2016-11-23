@@ -6,19 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     SeekBar timerSeekBar;
-    TextView timerTextView;
+    NumberPicker minutePicker;
+    NumberPicker onesPicker;
+    NumberPicker tenthPicker;
     Button controllerButton;
     Boolean counterIsActive = false;
     CountDownTimer countDownTimer;
+    int currentMinPicker;
+    int currentTenthPicker;
+    int currentOnesPicker;
+    int total;
 
     public void resetTimer() {
-
-        timerTextView.setText("0:30");
+        tenthPicker.setValue(3);
+        onesPicker.setValue(0);
+        minutePicker.setValue(0);
         timerSeekBar.setProgress(30);
         countDownTimer.cancel();
         controllerButton.setText("Go!");
@@ -32,15 +39,12 @@ public class MainActivity extends AppCompatActivity {
         int minutes = (int) secondsLeft / 60;
         int seconds = secondsLeft - minutes * 60;
 
-        String secondString = Integer.toString(seconds);
+        int ones = seconds % 10;
+        int tenth = (int) seconds / 10;
 
-        if (seconds <= 9) {
-
-            secondString = "0" + secondString;
-
-        }
-
-        timerTextView.setText(Integer.toString(minutes) + ":" + secondString);
+        minutePicker.setValue(minutes);
+        onesPicker.setValue(ones);
+        tenthPicker.setValue(tenth);
 
     }
 
@@ -83,10 +87,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         timerSeekBar = (SeekBar) findViewById(R.id.timerSeekbar);
-        timerTextView = (TextView) findViewById(R.id.timerTextView);
-        controllerButton = (Button)findViewById(R.id.controllerButton);
+        controllerButton = (Button) findViewById(R.id.controllerButton);
+        minutePicker = (NumberPicker) findViewById(R.id.minutePicker);
+        tenthPicker = (NumberPicker) findViewById(R.id.tenthPicker);
+        onesPicker = (NumberPicker) findViewById(R.id.onesPicker);
+
         timerSeekBar.setMax(600);
         timerSeekBar.setProgress(30);
+        minutePicker.setMinValue(0);
+        minutePicker.setMaxValue(10);
+        minutePicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);  // disable soft keyboard
+        tenthPicker.setMinValue(0);
+        tenthPicker.setMaxValue(5);
+        tenthPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        onesPicker.setMinValue(0);
+        onesPicker.setMaxValue(9);
+        onesPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+
+        tenthPicker.setValue(3);
+        onesPicker.setValue(0);
+
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -103,5 +123,31 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        minutePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                currentMinPicker = newVal * 60;
+                timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
+            }
+        });
+
+        tenthPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                currentTenthPicker = newVal * 10;
+                timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
+            }
+        });
+
+        onesPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                currentOnesPicker = newVal;
+                timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
+            }
+        });
+        timerSeekBar.setProgress(currentMinPicker + currentOnesPicker + currentTenthPicker);
+
     }
 }
