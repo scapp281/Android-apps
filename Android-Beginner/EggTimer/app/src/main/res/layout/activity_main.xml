@@ -48,24 +48,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/onesPicker"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
 
     <NumberPicker
         android:id="@+id/onesPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/controllerButton"
-        />
+        android:layout_toEndOf="@+id/controllerButton" />
 
     <EditText
         android:id="@+id/colon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/controllerButton"
         android:enabled="false"
         android:text=":"
-        android:textSize="50sp"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/controllerButton" />
+        android:textSize="50sp" />
+
+    <RadioGroup
+        android:id="@+id/musicControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="400dp"
+        android:checkedButton="@+id/radiobutton2"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/radiobutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/radiobutton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
 
 </RelativeLayout>
