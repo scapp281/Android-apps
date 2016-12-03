@@ -59,7 +59,9 @@
         android:layout_below="@+id/sumTextview"
         android:useDefaultMargins="false"
         android:layout_marginTop="20dp"
-        android:id="@+id/answersGrid">
+        android:id="@+id/answersGrid"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button0"

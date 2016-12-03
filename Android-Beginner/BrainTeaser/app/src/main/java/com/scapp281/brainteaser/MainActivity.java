@@ -25,13 +25,28 @@ public class MainActivity extends AppCompatActivity {
     CountDownTimer showMainGameScreen;
     ArrayList<Integer> answers = new ArrayList<Integer>();
     int locationOfCorrectAnswer;
+    int score = 0;
+    int numberOfQuestions = 0;
 
-    public void chooseAnswer(View view){
+    public void chooseAnswer(View view) {
+        if (view.getTag().toString().equals(Integer.toString(locationOfCorrectAnswer))) {
+            resultTextview.setVisibility(View.VISIBLE);
+            resultTextview.animate().scaleX(0.5f).setDuration(3000);
+            resultTextview.setText("Correct!");
 
+            score++;
+        } else {
+            resultTextview.setVisibility(View.VISIBLE);
+            resultTextview.animate().scaleX(0.5f).setDuration(3000);
+            resultTextview.setText("Incorrect!");
+        }
+        numberOfQuestions++;
+        pointsTextview.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
     }
+
     public void start(View view) {
         // TODO: Learn to do sets of animation
-        startButton.animate().alpha(1f).rotation(2000f).translationXBy(1800f).setDuration(4000);
+        startButton.animate().alpha(0f).rotation(2000f).translationXBy(1800f).setDuration(4000);
 
         showMainGameScreen = new CountDownTimer(3000, 1000) {
             @Override
