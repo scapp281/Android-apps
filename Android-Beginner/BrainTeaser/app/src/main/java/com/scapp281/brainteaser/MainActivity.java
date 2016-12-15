@@ -1,6 +1,5 @@
 package com.scapp281.brainteaser;
 
-import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +27,35 @@ public class MainActivity extends AppCompatActivity {
     int score = 0;
     int numberOfQuestions = 0;
 
+    public void generateQuestion() {
+
+        Random random = new Random();
+
+        int a = random.nextInt(50);
+        int b = random.nextInt(50);
+
+        sumTextview.setText(Integer.toString(a) + " + " + Integer.toString(b));
+        locationOfCorrectAnswer = random.nextInt(4);
+        answers.clear();
+
+        for (int i = 0; i < 4; i++) {
+            if (i == locationOfCorrectAnswer) {
+                answers.add(a + b);
+            } else {
+                int incorrectAnswer = random.nextInt(41);
+                while (incorrectAnswer == a + b) {
+                    incorrectAnswer = random.nextInt(41);
+                }
+                answers.add(incorrectAnswer);
+            }
+        }
+
+        button0.setText(Integer.toString(answers.get(0)));
+        button1.setText(Integer.toString(answers.get(1)));
+        button2.setText(Integer.toString(answers.get(2)));
+        button3.setText(Integer.toString(answers.get(3)));
+    }
+
     public void chooseAnswer(View view) {
         if (view.getTag().toString().equals(Integer.toString(locationOfCorrectAnswer))) {
             resultTextview.setVisibility(View.VISIBLE);
@@ -42,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }
         numberOfQuestions++;
         pointsTextview.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+        generateQuestion();
     }
 
     public void start(View view) {
@@ -87,29 +116,6 @@ public class MainActivity extends AppCompatActivity {
         resultTextview.setVisibility(View.GONE);
         answersGrid.setVisibility(View.GONE);
 
-        Random random = new Random();
-
-        int a = random.nextInt(50);
-        int b = random.nextInt(50);
-
-        sumTextview.setText(Integer.toString(a) + " + " + Integer.toString(b));
-        locationOfCorrectAnswer = random.nextInt(4);
-
-        for (int i = 0; i < 4; i++) {
-            if (i == locationOfCorrectAnswer) {
-                answers.add(a + b);
-            } else {
-                int incorrectAnswer = random.nextInt(41);
-                while (incorrectAnswer == a + b) {
-                    incorrectAnswer = random.nextInt(41);
-                }
-                answers.add(incorrectAnswer);
-            }
-        }
-
-        button0.setText(Integer.toString(answers.get(0)));
-        button1.setText(Integer.toString(answers.get(1)));
-        button2.setText(Integer.toString(answers.get(2)));
-        button3.setText(Integer.toString(answers.get(3)));
+        generateQuestion();
     }
 }
