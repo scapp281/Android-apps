@@ -3,10 +3,10 @@ package com.scapp281.brainteaser;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,15 +20,55 @@ public class MainActivity extends AppCompatActivity {
     TextView sumTextview;
     TextView resultTextview;
     GridLayout answersGrid;
-    Button button0, button1, button2, button3;
+    Button button0, button1, button2, button3, playAgainButton;
     CountDownTimer showMainGameScreen;
+    RelativeLayout mainScreen;
     ArrayList<Integer> answers = new ArrayList<Integer>();
     int locationOfCorrectAnswer;
     int score = 0;
     int numberOfQuestions = 0;
 
-    public void generateQuestion() {
 
+    private void shouldEnableButtons(GridLayout layout, boolean shouldEnable) {
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View child = layout.getChildAt(i);
+            if (shouldEnable) {
+                child.setEnabled(true);
+            } else {
+                child.setEnabled(false);
+            }
+        }
+    }
+
+    public void playAgain(View view) {
+        timerTextview.setText("30s");
+        pointsTextview.setText("0/0");
+        resultTextview.setText(" ");
+        resultTextview.setVisibility(View.VISIBLE);
+        playAgainButton.setVisibility(View.GONE);
+        score = 0;
+        numberOfQuestions = 0;
+        generateQuestion();
+        shouldEnableButtons(answersGrid, true);
+        new CountDownTimer(15000, 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timerTextview.setText(String.valueOf(millisUntilFinished / 1000) + "s");
+            }
+
+            @Override
+            public void onFinish() {
+                timerTextview.setText("0s");
+                resultTextview.setText("Your score is: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+                playAgainButton.setVisibility(View.VISIBLE);
+                shouldEnableButtons(answersGrid, false);
+            }
+        }.start();
+
+    }
+
+    public void generateQuestion() {
         Random random = new Random();
 
         int a = random.nextInt(50);
@@ -85,13 +125,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                timerTextview.setVisibility(View.VISIBLE);
-                pointsTextview.setVisibility(View.VISIBLE);
-                sumTextview.setVisibility(View.VISIBLE);
-                answersGrid.setVisibility(View.VISIBLE);
+                mainScreen.setVisibility(RelativeLayout.VISIBLE);
             }
         }.start();
-
+        playAgain(findViewById(R.id.playAgainButton));
     }
 
     @Override
@@ -99,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mainScreen = (RelativeLayout) findViewById(R.id.mainScreen);
         startButton = (Button) findViewById(R.id.startButton);
         startButton.setVisibility(View.VISIBLE);
         timerTextview = (TextView) findViewById(R.id.timerTextview);
@@ -110,12 +148,6 @@ public class MainActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
-        timerTextview.setVisibility(View.GONE);
-        pointsTextview.setVisibility(View.GONE);
-        sumTextview.setVisibility(View.GONE);
-        resultTextview.setVisibility(View.GONE);
-        answersGrid.setVisibility(View.GONE);
-
-        generateQuestion();
+        playAgainButton = (Button) findViewById(R.id.playAgainButton);
     }
 }

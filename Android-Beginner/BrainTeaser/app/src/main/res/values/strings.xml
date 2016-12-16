@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Brain Teaser</string>
     <string name="title_activity_teaser">Teaser</string>
+    <string name="go">Go!</string>
+    <string name="question">31 + 5</string>
+    <string name="point">0/0</string>
+    <string name="timer">30s</string>
+    <string name="result">Correct!</string>
+    <string name="play_again">Play Again</string>
 </resources>
