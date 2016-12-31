@@ -12,7 +12,6 @@
 * **[Animation Practice](#animation-practice)**
   * **[Connect3](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/AnimationPractice/Connect3)**  
 
-  
 * **[Building Blocks](#building-blocks)**
   * **[Audio Player](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Building%20Blocks/AudioPlayer)**  
   * **[B-Day Card](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Building%20Blocks/BDayCard)**
@@ -40,7 +39,7 @@ Beginner android projects
 | High Low           | Guess high-low game |
 | Phrases            | App contains simple Japanese phrases with audio sound     |
 | Score Counter      | Simple app to track a basketball game scores      |
-
+ 
 
 # Animation Practice
 Android animation projects
