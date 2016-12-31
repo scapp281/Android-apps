@@ -65,7 +65,7 @@ Projects that include sample snippets
 | Video Player       | Video player to play a sample video     |
 
 # Android Multiscreen
-Android projects that contain 
+Android projects that contain multi activities
 
 | Project Name       | Description   |    
 | ------------------ |:-------------:|
