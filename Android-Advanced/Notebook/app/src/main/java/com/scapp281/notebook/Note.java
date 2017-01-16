@@ -35,6 +35,10 @@ public class Note {
         return title;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
     public String getMessage() {
         return message;
     }
