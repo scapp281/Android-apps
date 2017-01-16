@@ -8,7 +8,7 @@
   * **[High Low](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/HighLow)**
   * **[Phrases](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Phrases)**
   * **[Score Counter](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/ScoreCounter)**
-    
+
 * **[Animation Practice](#animation-practice)**
   * **[Connect3](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/AnimationPractice/Connect3)**  
 
@@ -21,6 +21,9 @@
   * **[List View](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Building%20Blocks/ListView)**  
   * **[Timers](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Building%20Blocks/Timers)**
   * **[Video Player](https://github.com/scapp281/Android-apps/tree/master/Android-Beginner/Building%20Blocks/VideoPlayer)**  
+  
+* **[Android-Advanced](#android-advanced)**
+  * **[Notebook](https://github.com/scapp281/Android-apps/tree/master/Android-Advanced/Notebook)**
  
 * **[Android Multiscreen](#android-multiscreen)**
   * **[Miwok](https://github.com/scapp281/Android-apps/tree/master/Android-Mutiscreen/Miwok)** 
@@ -60,10 +63,17 @@ Projects that include sample snippets
 | Before After Cookie| Toggle between two image     |
 | Downloader         | Web contents downloader |
 | Fade Rotation      | Animations      |
-| JSON				 | JSON Processing
+| JSON				 | JSON Processing |
 | List View          | List |
 | Timers             | Timers example      |
 | Video Player       | Video player to play a sample video     |
+
+# Android Advanced
+Advanced android projects
+
+| Project Name       | Description   |    
+| ------------------ |:-------------:|
+| Notebook           | Personal Notebook app to drop down notes about Android topics |
 
 # Android Multiscreen
 Android projects that contain multi activities
