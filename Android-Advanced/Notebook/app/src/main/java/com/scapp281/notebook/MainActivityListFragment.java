@@ -3,6 +3,7 @@ package com.scapp281.notebook;
 
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ListView;
 
@@ -18,9 +19,13 @@ public class MainActivityListFragment extends ListFragment {
 
         ArrayList<Note> notes = new ArrayList<Note>();
         notes.add(new Note("Hello Android","This is a new note body", Note.Category.MAP));
-
+        notes.add(new Note("Hello Android","This is a new note body", Note.Category.MAP));
         noteAdapter = new NoteAdapter(getActivity(),notes);
         setListAdapter(noteAdapter);
+
+        getListView().setDivider(ContextCompat.getDrawable(getActivity(), android.R.color.holo_green_light));
+        getListView().setDividerHeight(10);
+        
     }
 
     @Override
