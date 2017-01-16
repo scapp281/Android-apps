@@ -25,7 +25,6 @@ public class MainActivityListFragment extends ListFragment {
 
         getListView().setDivider(ContextCompat.getDrawable(getActivity(), android.R.color.holo_green_light));
         getListView().setDividerHeight(10);
-        
     }
 
     @Override
