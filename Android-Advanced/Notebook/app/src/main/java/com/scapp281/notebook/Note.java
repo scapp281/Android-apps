@@ -6,13 +6,6 @@ public class Note {
     private long noteid,dateCreatedMilli;
     private Category category;
 
-    public enum Category {
-        BATTERY, CAR, CONNECTIVITY, GRAPHICS, MAP,
-        MULTIMEIDA, NETWORK, NETWORK_DATA, SHARING,
-        SIGNIN, STORAGE, SYNC_DOWNLOAD, TV, WATCH,
-        WIRELESS
-    }
-
     public Note(String title,String message,Category category){
 
         this.title = title;

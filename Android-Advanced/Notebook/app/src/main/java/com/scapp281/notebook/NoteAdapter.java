@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class NoteAdapter extends ArrayAdapter<Note> {
     /**
      * findViewById() once and save the views' reference for Optimizing NoteAdapter
-     * */
-    public static class ViewHolder{
+     */
+    public static class ViewHolder {
         TextView noteTitle;
         TextView noteBody;
         ImageView noteIcon;
@@ -25,7 +25,7 @@ public class NoteAdapter extends ArrayAdapter<Note> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         //get data item at this postion
         Note note = getItem(position);
 
@@ -33,10 +33,10 @@ public class NoteAdapter extends ArrayAdapter<Note> {
 
         //check if there an existing view can be reused, otherwise
         // inflated a new view from custon row layout
-        if(convertView ==null){
+        if (convertView == null) {
 
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row, parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row, parent, false);
 
             //set views to view holder so that we no longer have to go back and use
             //findViewById() for every new row
@@ -44,10 +44,9 @@ public class NoteAdapter extends ArrayAdapter<Note> {
             viewHolder.noteBody = (TextView) convertView.findViewById(R.id.listItemNoteBody);
             viewHolder.noteIcon = (ImageView) convertView.findViewById(R.id.listItemNoteImg);
 
-            //use tag to store reference of views
+            //use tag to remember reference of views
             convertView.setTag(viewHolder);
-        }
-        else{
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 

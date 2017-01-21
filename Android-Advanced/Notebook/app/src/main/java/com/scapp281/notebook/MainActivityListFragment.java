@@ -18,8 +18,8 @@ public class MainActivityListFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
 
         ArrayList<Note> notes = new ArrayList<Note>();
-        notes.add(new Note("Hello Android","This is a new note body", Note.Category.MAP));
-        notes.add(new Note("Hello Android","This is a new note body", Note.Category.MAP));
+        notes.add(new Note("Hello Android","This is a new note body", Category.MAP));
+        notes.add(new Note("Hello Android","This is a new note body", Category.MAP));
         noteAdapter = new NoteAdapter(getActivity(),notes);
         setListAdapter(noteAdapter);
 
