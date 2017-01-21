@@ -1,0 +1,8 @@
+package com.scapp281.notebook;
+
+public enum Category {
+    BATTERY, CAR, CONNECTIVITY, GRAPHICS, MAP,
+    MULTIMEIDA, NETWORK, NETWORK_DATA, SHARING,
+    SIGNIN, STORAGE, SYNC_DOWNLOAD, TV, WATCH,
+    WIRELESS
+}
