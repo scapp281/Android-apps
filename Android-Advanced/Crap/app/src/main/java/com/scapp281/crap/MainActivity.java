@@ -1,9 +1,13 @@
 package com.scapp281.crap;
 
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     public int myPoint = 0, sumOfDice = 0;
     Status gameStatus;
 
+    SoundPool dice_sound = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+    int sound_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
         dice2 = (ImageView) findViewById(R.id.dice2);
         point = (TextView) findViewById(R.id.point);
         roll = (Button) findViewById(R.id.rollBtn);
+        sound_id = dice_sound.load(this, R.raw.shake_dice, 1);
         dice = new Dice();
 
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dice_sound.play(sound_id,1.0f,1.0f,0,0,1.0f);
+                Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+                dice1.startAnimation(rotate);
+                dice2.startAnimation(rotate);
+
                 sumOfDice = dice.rollDice();
                 x = dice.getX();
                 y = dice.getY();
